@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ktuprojektas</string>
+    <string name="title_activity_quiz_main_activty">QuizMainActivty</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Quiz game</string>
+    <string name="nav_header_subtitle"></string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Quiz game</string>
+    <string name="menu_rules">Rules</string>
+    <string name="menu_rankings">Scoreboard</string>
+</resources>
