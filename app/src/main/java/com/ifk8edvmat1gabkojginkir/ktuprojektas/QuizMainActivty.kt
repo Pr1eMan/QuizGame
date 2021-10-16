@@ -45,7 +45,7 @@ class QuizMainActivty : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         //val name: String = Constants.const_name
-        Toast.makeText(applicationContext, const_user_name, Toast.LENGTH_SHORT).show() //ispausdina burbuliuka vardas
+        //Toast.makeText(applicationContext, const_user_name, Toast.LENGTH_SHORT).show() //ispausdina burbuliuka vardas
 
         val btnstart2 : Button =findViewById(R.id.btnStart)
         btnstart2.setOnClickListener {
