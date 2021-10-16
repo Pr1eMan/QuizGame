@@ -11,4 +11,5 @@
     <string name="menu_home">Quiz game</string>
     <string name="menu_rules">Rules</string>
     <string name="menu_rankings">Scoreboard</string>
+    <string name="menu_settings">Scoreboard</string>
 </resources>
