@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show() //nivalit
             } else {
                 val intent = Intent(this, QuizMainActivty::class.java)
+             // val intent = Intent(this, QuizGameMain::class.java)
                 startActivity(intent)
                 finish()
             }
