@@ -50,7 +50,9 @@ class QuizMainActivty : AppCompatActivity() {
         val btnstart2 : Button =findViewById(R.id.btnStart)
         btnstart2.setOnClickListener {
             if(btnstart2.isPressed)
-            {val intent = Intent(this, QuizGameMain::class.java)
+            {
+                val intent = Intent(this,QuizGameMain::class.java)
+                intent.putExtra(Constants.USER_NAME, const_user_name)
                 startActivity(intent)
                 finish()
             }

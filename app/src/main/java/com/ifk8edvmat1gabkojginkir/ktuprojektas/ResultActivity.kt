@@ -12,14 +12,17 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        val user_name = intent.getStringExtra(Constants.USER_NAME)
+        //val user_name = intent.getStringExtra(Constants.USER_NAME)
         val username = findViewById<View>(R.id.username) as TextView
-        username.text = user_name
+        //username.text = user_name
 
         val totalQuestions = intent.getIntExtra(Constants.TOTAL_QUESTIONS,0)
         val correctAnswers = intent.getIntExtra(Constants.CORRECT_ANSWERS,0)
+        val mUserName = intent.getStringExtra(Constants.USER_NAME)
         val score = findViewById<View>(R.id.score) as TextView
+        val congrats = findViewById<View>(R.id.congrats) as TextView
         val btnFinish = findViewById<View>(R.id.btnDone) as Button
+        congrats.text ="Congrats, $mUserName"
         score.text = "Your score is $correctAnswers out of $totalQuestions"
         btnFinish.setOnClickListener {
             startActivity(Intent(this,QuizMainActivty::class.java))

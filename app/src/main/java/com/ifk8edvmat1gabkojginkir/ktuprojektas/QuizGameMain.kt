@@ -21,11 +21,12 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
     private var mQuestionsList:ArrayList<Question>?=null
     private var mSelectedOptionPosition:Int=0
     private var mCorrectAnswers: Int =0
+    private var mUserName: String? =null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_game_main)
         mQuestionsList = Constants.getQuestions()
-
+        mUserName = intent.getStringExtra(Constants.USER_NAME)
         setQuestion()
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
@@ -37,6 +38,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
 
     }
     private fun setQuestion() {
+
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
@@ -91,7 +93,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                             setQuestion()
                         } else -> {
                             val intent = Intent(this,ResultActivity::class.java)
-                            intent.putExtra(Constants.USER_NAME, "test")
+                            intent.putExtra(Constants.USER_NAME, mUserName)
                             intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
                             intent.putExtra(Constants.TOTAL_QUESTIONS,mQuestionsList!!.size)
                             startActivity(intent)
