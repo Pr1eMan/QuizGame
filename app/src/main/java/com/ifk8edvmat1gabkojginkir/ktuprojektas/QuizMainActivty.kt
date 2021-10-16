@@ -39,7 +39,25 @@ class QuizMainActivty : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+<<<<<<< Updated upstream
     }
+=======
+
+        //val name: String = Constants.const_name
+//        Toast.makeText(applicationContext, const_user_name, Toast.LENGTH_SHORT).show() //ispausdina burbuliuka vardas
+
+        val btnstart2 : Button =findViewById(R.id.btnStart)
+        btnstart2.setOnClickListener {
+            val intent = Intent(this, QuizGameMain::class.java)
+           /// intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            this.startActivity(intent)
+
+
+        }
+        }
+        //val btn_start : Button = findViewById(R.id.btnEnter)
+
+>>>>>>> Stashed changes
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

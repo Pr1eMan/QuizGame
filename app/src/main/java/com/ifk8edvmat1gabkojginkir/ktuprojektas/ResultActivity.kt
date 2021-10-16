@@ -22,7 +22,15 @@ class ResultActivity : AppCompatActivity() {
         val btnFinish = findViewById<View>(R.id.btnDone) as Button
         score.text = "Your score is $correctAnswers out of $totalQuestions"
         btnFinish.setOnClickListener {
-            startActivity(Intent(this,QuizMainActivty::class.java))
+            if(btnFinish.isPressed)
+            {
+
+                val intent = Intent(this, QuizMainActivty::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+
+            }
+
         }
     }
 }
