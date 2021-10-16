@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             else{
                 Toast.makeText(applicationContext, "successful", Toast.LENGTH_SHORT).show() //veikia sutvarkiau
                 val intent = Intent(this, QuizMainActivty::class.java)
+                intent.putExtra(Constants.const_name,et_name.text.toString()) // i constants patalpinam varda kuri paduodam
                 startActivity(intent)
                 finish()
             }
