@@ -3,6 +3,7 @@ package com.ifk8edvmat1gabkojginkir.ktuprojektas
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
@@ -14,6 +15,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.PreferenceManager
 import com.ifk8edvmat1gabkojginkir.ktuprojektas.databinding.ActivityQuizMainActivtyBinding
 import com.ifk8edvmat1gabkojginkir.ktuprojektas.Constants
 
@@ -58,16 +60,30 @@ class QuizMainActivty : AppCompatActivity() {
             }
 
         }
+       // mySettings()
         }
+ /*   private fun mySettings(){
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+    }*/
         //val btn_start : Button = findViewById(R.id.btnEnter)
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.quiz_main_activty, menu)
-        return true
+        return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_settings ->{
+                val intent = Intent(this,SettingsActivity::class.java)
+
+                startActivity(intent)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_quiz_main_activty)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
