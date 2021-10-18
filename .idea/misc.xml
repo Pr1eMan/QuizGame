@@ -3,12 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/drawable/ic_menu_settings.xml" value="0.21770833333333334" />
-        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/drawable/settings.xml" value="0.21770833333333334" />
-        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/drawable/side_nav_bar.xml" value="0.21770833333333334" />
-        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/settings_activity.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/menu/quiz_main_activty.xml" value="0.2015625" />
-        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/xml/root_preferences.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_main.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_question.xml" value="0.20018115942028986" />
@@ -44,6 +38,16 @@
         <entry key="..\:/Users/veryga/AndroidStudioProjects/ktuprojektas/app/src/main/res/layout/nav_header_quiz_main_activty.xml" value="0.1" />
         <entry key="..\:/Users/veryga/AndroidStudioProjects/ktuprojektas/app/src/main/res/menu/activity_main_drawer.xml" value="0.145578231292517" />
         <entry key="..\:/Users/veryga/AndroidStudioProjects/ktuprojektas/app/src/main/res/menu/quiz_main_activty.xml" value="0.1" />
+        <entry key="..\:/Users/veryga/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_main.xml" value="0.203125" />
+        <entry key="..\:/Users/veryga/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_question.xml" value="0.203125" />
+        <entry key="..\:/Users/veryga/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_quiz_game_main.xml" value="0.203125" />
+        <entry key="..\:/Users/veryga/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_quiz_main.xml" value="0.203125" />
+        <entry key="..\:/Users/veryga/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_quiz_main_activty.xml" value="0.203125" />
+        <entry key="..\:/Users/veryga/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_result.xml" value="0.203125" />
+        <entry key="..\:/Users/veryga/Documents/GitHub/QuizGame/app/src/main/res/layout/app_bar_quiz_main_activty.xml" value="0.203125" />
+        <entry key="..\:/Users/veryga/Documents/GitHub/QuizGame/app/src/main/res/layout/content_quiz_main_activty.xml" value="0.203125" />
+        <entry key="..\:/Users/veryga/Documents/GitHub/QuizGame/app/src/main/res/layout/fragment_home.xml" value="0.203125" />
+        <entry key="..\:/Users/veryga/Documents/GitHub/QuizGame/app/src/main/res/layout/settings_activity.xml" value="0.20260416666666667" />
       </map>
     </option>
   </component>

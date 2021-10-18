@@ -58,11 +58,11 @@ class QuizMainActivty : AppCompatActivity() {
             }
 
         }
-        mySettings()
+       // mySettings()
         }
-    private fun mySettings(){
+ /*   private fun mySettings(){
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-    }
+    }*/
         //val btn_start : Button = findViewById(R.id.btnEnter)
 
 
