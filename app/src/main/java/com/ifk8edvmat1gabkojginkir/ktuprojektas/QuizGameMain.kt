@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -57,7 +58,9 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
        // val optionOne = findViewById<View>(R.id.optionOne) as TextView
         optionOne.text = question.optionOne
        // val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
-        optionTwo.text = question.optionTwo
+       // optionTwo.text = question.optionTwo
+        val optionTwoText : EditText = findViewById(R.id.answer)
+        optionTwo.text = optionTwoText.toString()
 
     }
     private fun defaultOptionsView() {
@@ -66,7 +69,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
         val options=ArrayList<TextView>()
         options.add(0,optionOne)
-        options.add(1,optionTwo)
+       // options.add(1,optionTwo)
         for (option in options) {
             option.setTextColor(Color.parseColor("#7a8089"))
             option.typeface = Typeface.DEFAULT
