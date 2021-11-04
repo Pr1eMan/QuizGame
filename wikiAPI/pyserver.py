@@ -77,8 +77,8 @@ class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
                             else:
                                 aa = {
                                   "question": klausimas,
-                                  "correct_answer": teisingas_atsakymas,
-                                  "answers": [teisingas_atsakymas,atsakymas1,atsakymas2]
+                                  "correct_answer": int(teisingas_atsakymas),
+                                  "answers": [int(teisingas_atsakymas),atsakymas1,atsakymas2]
                                 }
                     if(aa !=None):
                         y = json.dumps(aa)
