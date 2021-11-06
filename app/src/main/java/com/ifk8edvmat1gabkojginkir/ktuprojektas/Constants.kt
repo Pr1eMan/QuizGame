@@ -1,5 +1,7 @@
 package com.ifk8edvmat1gabkojginkir.ktuprojektas
 
+import com.ifk8edvmat1gabkojginkir.ktuprojektas.DTO.quizDTO
+
 object Constants {
 
 
@@ -23,4 +25,5 @@ object Constants {
 
         return questionsList
     }
+
 }

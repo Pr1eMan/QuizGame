@@ -15,7 +15,12 @@ import org.chromium.base.Log
 import kotlin.text.Regex
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.ifk8edvmat1gabkojginkir.ktuprojektas.DTO.quizDTO
+import com.ifk8edvmat1gabkojginkir.ktuprojektas.DTO.quizList
 import org.w3c.dom.Text
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class QuizGameMain : AppCompatActivity(), View.OnClickListener {
     private var mCurrentPosition:Int =1
@@ -35,6 +40,29 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         optionOne.setOnClickListener(this)
         optionTwo.setOnClickListener(this)
         btnSubmit.setOnClickListener(this)
+
+
+
+
+        //cia json retrofit galima perkelt i kita klase nzn kur reikia
+
+        val service = RetrofitClientInstance.retrofitInstance?.create(GetQuizService::class.java)
+        val call = service?.getallquiz()
+
+        call?.enqueue(object : Callback<quizList>{
+            override fun onResponse(call: Call<quizList>, response: Response<quizList>) {
+                val body = response?.body()
+                val allquiz = body?.quiz // cia yra visas quiz ArrayList (reikia ispausdint kad pasiziuret body: "quizlist(quiz=[quizDTO(question=....,correct_answer=.....,answers=......)...
+
+            }
+
+            override fun onFailure(call: Call<quizList>, t: Throwable) {
+                Toast.makeText(applicationContext,"error reading JSON",Toast.LENGTH_LONG).show()
+            }
+
+        })
+
+
 
 
     }
