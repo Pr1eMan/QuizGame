@@ -17,9 +17,9 @@
         android:label="@string/menu_rules"
         tools:layout="@layout/fragment_rules" />
 
-    <fragment
+    <activity
         android:id="@+id/nav_rankings"
-        android:name="com.ifk8edvmat1gabkojginkir.ktuprojektas.ui.rankings.RankingsFragment"
+        android:name="com.ifk8edvmat1gabkojginkir.ktuprojektas.RankingActivity"
         android:label="@string/menu_rankings"
         tools:layout="@layout/fragment_rankings" />
     <fragment

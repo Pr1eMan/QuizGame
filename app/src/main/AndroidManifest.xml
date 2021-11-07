@@ -25,6 +25,12 @@
             android:name=".QuizGameMain"
             android:exported="true" />
         <activity
+            android:name=".MyDBHelper"
+            android:exported="true" />
+        <activity
+            android:name=".RankingActivity"
+            android:exported="true" />
+        <activity
             android:name=".QuizMainActivty"
             android:exported="true"
             android:label="@string/title_activity_quiz_main_activty"

@@ -39,7 +39,9 @@ class HomeFragment : Fragment() {
         val button: Button = binding.btnStart
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             button.text = it
-        })
+        }
+
+        )
 
 
         return root
