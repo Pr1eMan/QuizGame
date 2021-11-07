@@ -47,6 +47,9 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         val service = RetrofitClientInstance.retrofitInstance?.create(GetQuizService::class.java)
         val call = service?.getallquiz()
 
+
+
+        
         call?.enqueue(object : Callback<quizList> {
             override fun onResponse(call: Call<quizList>, response: Response<quizList>) {
                 val body = response?.body()
