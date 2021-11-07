@@ -42,18 +42,28 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         btnSubmit.setOnClickListener(this)
 
 
-
-
         //cia json retrofit galima perkelt i kita klase nzn kur reikia
 
         val service = RetrofitClientInstance.retrofitInstance?.create(GetQuizService::class.java)
         val call = service?.getallquiz()
 
-        call?.enqueue(object : Callback<quizList>{
+        call?.enqueue(object : Callback<quizList> {
             override fun onResponse(call: Call<quizList>, response: Response<quizList>) {
                 val body = response?.body()
                 val allquiz = body?.quiz // cia yra visas quiz ArrayList (reikia ispausdint kad pasiziuret body: "quizlist(quiz=[quizDTO(question=....,correct_answer=.....,answers=......)...
 
+                if(allquiz != null){
+                    for(i in 0 until allquiz.count()){
+                        val questiondto = allquiz[i].question ?: "N/A"
+                        android.util.Log.v("question ", questiondto)
+
+                        val answersdto = allquiz[i].answers ?: 0
+                        android.util.Log.v("answers ", answersdto.toString())
+
+                        val correctanswerdto = allquiz[i].correct_answer ?: 0
+                        android.util.Log.v("correctanswer ", correctanswerdto.toString())
+                    }
+                }
             }
 
             override fun onFailure(call: Call<quizList>, t: Throwable) {
@@ -61,8 +71,6 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
             }
 
         })
-
-
 
 
     }
