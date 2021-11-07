@@ -87,4 +87,6 @@ class QuizMainActivty : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
+
+
 }

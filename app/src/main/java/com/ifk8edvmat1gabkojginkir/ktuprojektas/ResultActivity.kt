@@ -29,4 +29,6 @@ class ResultActivity : AppCompatActivity() {
             finish()
         }
     }
+
+
 }
