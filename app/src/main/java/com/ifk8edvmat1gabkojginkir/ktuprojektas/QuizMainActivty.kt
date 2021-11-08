@@ -66,8 +66,6 @@ class QuizMainActivty : AppCompatActivity() {
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
     }*/
         //val btn_start : Button = findViewById(R.id.btnEnter)
-
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.quiz_main_activty, menu)
@@ -88,5 +86,7 @@ class QuizMainActivty : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_quiz_main_activty)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+
 
 }

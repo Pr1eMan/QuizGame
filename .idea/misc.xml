@@ -3,6 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/gkoje/.gradle/caches/transforms-3/ff42b6db226363532ad3304042c7873b/transformed/jetified-preference-v7-25.3.0.0/res/layout/preference_widget_seekbar.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/drawable/ic_menu_settings.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/drawable/side_nav_bar.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_main.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_question.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_quiz_game_main.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_quiz_main.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_quiz_main_activty.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_result.xml" value="0.20108695652173914" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/app_bar_quiz_main_activty.xml" value="0.25" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/content_quiz_main_activty.xml" value="0.20108695652173914" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/fragment_rankings.xml" value="0.25" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/fragment_settings.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/list_item.xml" value="0.22" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/nav_header_quiz_main_activty.xml" value="0.5652173913043478" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/layout/settings_activity.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/menu/activity_main_drawer.xml" value="0.2015625" />
+        <entry key="..\:/Users/gkoje/OneDrive/Documents/GitHub/QuizGame/app/src/main/res/menu/quiz_main_activty.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_main.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_question.xml" value="0.20018115942028986" />

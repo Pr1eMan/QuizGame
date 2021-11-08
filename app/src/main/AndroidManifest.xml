@@ -11,11 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ktuprojektas">
         <activity
+            android:name=".RankingActivityy"
+            android:exported="true" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="true"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".QuizMainActivty"
-            />
+            android:parentActivityName=".QuizMainActivty" />
         <activity
             android:name=".ResultActivity"
             android:exported="true" />
@@ -24,6 +26,12 @@
             android:exported="true" />
         <activity
             android:name=".QuizGameMain"
+            android:exported="true" />
+        <activity
+            android:name=".MyDBHelper"
+            android:exported="true" />
+        <activity
+            android:name=".RankingActivity"
             android:exported="true" />
         <activity
             android:name=".QuizMainActivty"
@@ -36,7 +44,6 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

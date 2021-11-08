@@ -190,4 +190,6 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         tv.setBackgroundColor(Color.parseColor("#FFBB86FC"));
 
     }
+
+
 }
