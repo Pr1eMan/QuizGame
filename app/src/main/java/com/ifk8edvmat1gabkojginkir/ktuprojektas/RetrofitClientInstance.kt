@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitClientInstance {
     private var retrofit: Retrofit? = null
     private const val BASE_URL =
-        "http://itoaze.lt:8000/"  // getquizservice ten galas linko uzrasyti tinkamai
+        "https://itoaze.lt:8000/"  // getquizservice ten galas linko uzrasyti tinkamai
     val retrofitInstance: Retrofit?
         get() {
             if (retrofit == null) {

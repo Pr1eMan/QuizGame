@@ -60,11 +60,11 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                         val questiondto = allquiz[i].question ?: "N/A"
                         android.util.Log.v("question ", questiondto)
 
-                        val answersdto = allquiz[i].answers ?: 0
-                        android.util.Log.v("answers ", answersdto.toString())
+                        val answersdto = allquiz[i].answers ?: "N/A"
+                        android.util.Log.v("answers ", answersdto)
 
-                        val correctanswerdto = allquiz[i].correct_answer ?: 0
-                        android.util.Log.v("correctanswer ", correctanswerdto.toString())
+                        val correctanswerdto = allquiz[i].correct_answer ?: "N/A"
+                        android.util.Log.v("correctanswer ", correctanswerdto)
                     }
                 }
             }
