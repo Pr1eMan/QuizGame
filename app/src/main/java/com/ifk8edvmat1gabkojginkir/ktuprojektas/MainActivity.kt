@@ -9,9 +9,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.ifk8edvmat1gabkojginkir.ktuprojektas.DTO.quizList
+import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.File
+import java.net.URL
+import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +39,10 @@ class MainActivity : AppCompatActivity() {
                 et_name.error = "Required"
                Toast.makeText(applicationContext, "Please enter your desired name", Toast.LENGTH_SHORT).show() //veikia sutvarkiau
 
+
+
             }
+
             else{
                 Toast.makeText(applicationContext, "successful", Toast.LENGTH_SHORT).show() //veikia sutvarkiau
                 val intent = Intent(this, QuizMainActivty::class.java)
