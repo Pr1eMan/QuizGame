@@ -54,17 +54,17 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
             override fun onResponse(call: Call<quizList>, response: Response<quizList>) {
                 val body = response?.body()
                 val allquiz = body?.quiz // cia yra visas quiz ArrayList (reikia ispausdint kad pasiziuret body: "quizlist(quiz=[quizDTO(question=....,correct_answer=.....,answers=......)...
-
+                val size = allquiz?.size
                 if(allquiz != null){
                     for(i in 0 until allquiz.count()){
                         val questiondto = allquiz[i].question ?: "N/A"
                         android.util.Log.v("question ", questiondto)
 
-                        val answersdto = allquiz[i].answers ?: "N/A"
-                        android.util.Log.v("answers ", answersdto)
+                        val answersdto = allquiz[i].answers ?: 0
+                        android.util.Log.v("answers ", answersdto.toString())
 
-                        val correctanswerdto = allquiz[i].correct_answer ?: "N/A"
-                        android.util.Log.v("correctanswer ", correctanswerdto)
+                        val correctanswerdto = allquiz[i].correct_answer ?: 0
+                        android.util.Log.v("correctanswer ", correctanswerdto.toString())
                     }
                 }
             }
