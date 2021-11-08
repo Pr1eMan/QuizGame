@@ -95,9 +95,11 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         questionas.text = question!!.question
 
        // val optionOne = findViewById<View>(R.id.optionOne) as TextView
-      // optionOne.text = question.optionOne
+        optionOne.text = question.optionOne
        // val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
-        optionTwo.text = "Ivesti atsakyma"
+       // optionTwo.text = question.optionTwo
+        val optionTwoText : EditText = findViewById(R.id.answer)
+        optionTwo.text = optionTwoText.toString()
 
     }
     private fun defaultOptionsView() {
@@ -106,7 +108,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
         val options=ArrayList<TextView>()
         options.add(0,optionOne)
-        options.add(1,optionTwo)
+       // options.add(1,optionTwo)
         for (option in options) {
             option.setTextColor(Color.parseColor("#7a8089"))
             option.typeface = Typeface.DEFAULT
@@ -117,14 +119,12 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
-        val debug = findViewById<View>(R.id.debug) as TextView
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
         when(v?.id) {
             R.id.optionOne -> {
                 selectedOptionView(optionOne,1)
             }
             R.id.optionTwo -> {
-
                 selectedOptionView(optionTwo,2)
             }
             R.id.btnSubmit -> {
@@ -144,32 +144,10 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                     }
                 } else {
                     val question = mQuestionsList?.get(mCurrentPosition-1)
-                    if(mSelectedOptionPosition ==2) {
-                        var ats = findViewById(R.id.answer) as EditText
-                          debug.text=question!!.correctAnswer.toString()
-                        if(question.optionOne == ats.text.toString()) {
-                            if(question.correctAnswer == question!!.correctAnswer) {
-                                mSelectedOptionPosition==1
-                                mCorrectAnswers++
-                                debug.text="Your answer is correct"
-                            } else {
-                                debug.text="Your answer is incorrect"
-                            }
-                        }
-                        if(question.optionTwo == ats.text.toString()) {
-                            if(question.correctAnswer == question!!.correctAnswer) {
-                                mSelectedOptionPosition==2
-                                mCorrectAnswers++
-                                debug.text="Your answer is correct"
-                            } else {
-                                debug.text="Your answer is incorrect"
-                            }
-                        }
-                    }
                     if(question!!.correctAnswer != mSelectedOptionPosition) {
                         answerView(mSelectedOptionPosition,R.drawable.red)
                     } else {
-                        //mCorrectAnswers++
+                        mCorrectAnswers++
                     }
                     answerView(question.correctAnswer, R.drawable.green)
                     if(mCurrentPosition == mQuestionsList!!.size) {
@@ -190,16 +168,15 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
         when(answer) {
             1-> {
-            //    optionOne.background = ContextCompat.getDrawable(this,drawableView)
+                optionOne.background = ContextCompat.getDrawable(this,drawableView)
             }
             2-> {
-              //  optionTwo.background = ContextCompat.getDrawable(this,drawableView)
+                optionTwo.background = ContextCompat.getDrawable(this,drawableView)
             }
         }
     }
     private fun selectedOptionView(tv: TextView, selectedOptionNum:Int) {
         defaultOptionsView()
-
         mSelectedOptionPosition = selectedOptionNum
         tv.setTextColor(Color.parseColor("#FFFFFFFF"))
       //  tv.setTypeface = (tv.typeface, Typeface.BOLD)
