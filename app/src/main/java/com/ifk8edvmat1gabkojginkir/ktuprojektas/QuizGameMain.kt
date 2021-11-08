@@ -12,7 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import org.chromium.base.Log
-import kotlin.text.Regex
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.ifk8edvmat1gabkojginkir.ktuprojektas.DTO.quizDTO
@@ -147,21 +147,22 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                     if(mSelectedOptionPosition ==2) {
                         var ats = findViewById(R.id.answer) as EditText
                           debug.text=question!!.correctAnswer.toString()
-                        val pattern = ats.text.toString().toRegex()
-
-                        if(question.optionOne == ats.text.toString() || pattern.containsMatchIn(question.optionOne)) {
+                        if(question.optionOne == ats.text.toString()) {
                             if(question.correctAnswer == question!!.correctAnswer) {
                                 mSelectedOptionPosition==1
                                 mCorrectAnswers++
                                 debug.text="Your answer is correct"
-
+                            } else {
+                                debug.text="Your answer is incorrect"
                             }
                         }
-                        if(question.optionTwo == ats.text.toString() || pattern.containsMatchIn(question.optionTwo)) {
+                        if(question.optionTwo == ats.text.toString()) {
                             if(question.correctAnswer == question!!.correctAnswer) {
                                 mSelectedOptionPosition==2
                                 mCorrectAnswers++
                                 debug.text="Your answer is correct"
+                            } else {
+                                debug.text="Your answer is incorrect"
                             }
                         }
                     }
