@@ -34,6 +34,7 @@
             android:gravity="center"
             android:textSize="15sp"
             android:id="@+id/optionTwo"/>
+<<<<<<< HEAD
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/answer"
             android:layout_width="match_parent"
@@ -41,6 +42,8 @@
             android:hint="answer"
             android:textColor="@color/black"
             android:textColorHint="@color/purple_200"/>
+=======
+>>>>>>> parent of 666e2b8 (Merge branch 'Edvinas1' into Gintas)
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"

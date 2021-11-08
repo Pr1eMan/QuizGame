@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -97,9 +96,13 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
        // val optionOne = findViewById<View>(R.id.optionOne) as TextView
         optionOne.text = question.optionOne
        // val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
+<<<<<<< HEAD
        // optionTwo.text = question.optionTwo
         val optionTwoText : EditText = findViewById(R.id.answer)
         optionTwo.text = optionTwoText.toString()
+=======
+        optionTwo.text = question.optionTwo
+>>>>>>> parent of 666e2b8 (Merge branch 'Edvinas1' into Gintas)
 
     }
     private fun defaultOptionsView() {
