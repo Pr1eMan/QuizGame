@@ -32,7 +32,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_quiz_game_main)
         mQuestionsList = Constants.getQuestions()
         mUserName = intent.getStringExtra(Constants.USER_NAME)
-        setQuestion()
+
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
@@ -54,8 +54,14 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                 val body = response?.body()
                 val allquiz = body?.quiz // cia yra visas quiz ArrayList (reikia ispausdint kad pasiziuret body: "quizlist(quiz=[quizDTO(question=....,correct_answer=.....,answers=......)...
                 val size = allquiz?.size
+                android.util.Log.v("json list size", size.toString())
                 if(allquiz != null){
+
                     for(i in 0 until allquiz.count()){
+                        val que1 = Question(i+1,allquiz[i].question,allquiz[i].answers[0].toString(),allquiz[i].answers[1].toString(),1
+                        )
+                            mQuestionsList!!.add(que1)
+                        setQuestion()
                         val questiondto = allquiz[i].question ?: "N/A"
                         android.util.Log.v("question ", questiondto)
 
@@ -82,7 +88,10 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
        // mCurrentPosition=1
-        val question: Question? = mQuestionsList!!.get(mCurrentPosition-1)
+        //Thread.sleep(1_000)
+        android.util.Log.v("question list size", mQuestionsList!!.size.toString())
+
+        val question: Question? = mQuestionsList!!.get(mCurrentPosition+1)
 
         defaultOptionsView()
         if(mCurrentPosition == mQuestionsList!!.size) {
@@ -129,13 +138,13 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                 if(mSelectedOptionPosition ==0) {
                     mCurrentPosition++
                     when {
-                        mCurrentPosition <= mQuestionsList!!.size-> {
+                        mCurrentPosition <= mQuestionsList!!.size-2-> {
                             setQuestion()
                         } else -> {
                             val intent = Intent(this,ResultActivity::class.java)
                             intent.putExtra(Constants.USER_NAME, mUserName)
                             intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS,mQuestionsList!!.size)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS,mQuestionsList!!.size-2)
                             startActivity(intent)
                           //  Toast.makeText(this,"You have successfully completed the Quiz", Toast.LENGTH_SHORT).show()
                         }
