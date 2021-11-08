@@ -25,11 +25,11 @@ object Constants {
 
         return questionsList
     }
-
+/*
 
     fun getQuestions2(): ArrayList<quizDTO>{
         val questionlist2 = ArrayList<quizDTO>()
-        
-    }
 
+    }
+*/
 }

@@ -95,14 +95,9 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
 
        // val optionOne = findViewById<View>(R.id.optionOne) as TextView
         optionOne.text = question.optionOne
-       // val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
-<<<<<<< HEAD
-       // optionTwo.text = question.optionTwo
-        val optionTwoText : EditText = findViewById(R.id.answer)
-        optionTwo.text = optionTwoText.toString()
-=======
         optionTwo.text = question.optionTwo
->>>>>>> parent of 666e2b8 (Merge branch 'Edvinas1' into Gintas)
+       // val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
+
 
     }
     private fun defaultOptionsView() {
@@ -111,7 +106,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
         val options=ArrayList<TextView>()
         options.add(0,optionOne)
-       // options.add(1,optionTwo)
+        options.add(1,optionTwo)
         for (option in options) {
             option.setTextColor(Color.parseColor("#7a8089"))
             option.typeface = Typeface.DEFAULT
