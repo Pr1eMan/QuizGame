@@ -144,31 +144,6 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                     }
                 } else {
                     val question = mQuestionsList?.get(mCurrentPosition-1)
-<<<<<<< HEAD
-=======
-                    if(mSelectedOptionPosition ==2) {
-                        var ats = findViewById(R.id.answer) as EditText
-                          debug.text=question!!.correctAnswer.toString()
-                        if(question.optionOne == ats.text.toString()) {
-                            if(question.correctAnswer == question!!.correctAnswer) {
-                                mSelectedOptionPosition==1
-                                mCorrectAnswers++
-                                debug.text="Your answer is correct"
-                            } else {
-                                debug.text="Your answer is incorrect"
-                            }
-                        }
-                        if(question.optionTwo == ats.text.toString()) {
-                            if(question.correctAnswer == question!!.correctAnswer) {
-                                mSelectedOptionPosition==2
-                                mCorrectAnswers++
-                                debug.text="Your answer is correct"
-                            } else {
-                                debug.text="Your answer is incorrect"
-                            }
-                        }
-                    }
->>>>>>> parent of 42612f8 (defended)
                     if(question!!.correctAnswer != mSelectedOptionPosition) {
                         answerView(mSelectedOptionPosition,R.drawable.red)
                     } else {
