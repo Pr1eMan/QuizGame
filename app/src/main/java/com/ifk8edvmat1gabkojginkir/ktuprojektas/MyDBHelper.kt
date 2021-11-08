@@ -1,7 +1,10 @@
 package com.ifk8edvmat1gabkojginkir.ktuprojektas
 
 import android.content.Context
+import android.database.Cursor
+import android.database.sqlite.SQLiteConstraintException
 import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import java.security.AccessControlContext
 

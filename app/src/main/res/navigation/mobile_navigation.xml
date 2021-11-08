@@ -19,7 +19,7 @@
 
     <activity
         android:id="@+id/nav_rankings"
-        android:name="com.ifk8edvmat1gabkojginkir.ktuprojektas.RankingActivity"
+        android:name="com.ifk8edvmat1gabkojginkir.ktuprojektas.RankingActivityy"
         android:label="@string/menu_rankings"
         tools:layout="@layout/fragment_rankings" />
     <fragment
