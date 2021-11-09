@@ -5,8 +5,10 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -22,6 +24,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class QuizGameMain : AppCompatActivity(), View.OnClickListener {
+    private var progressStatus = 0
+    private val handler: Handler = Handler()
     private var mCurrentPosition:Int =1
     private var mQuestionsList:ArrayList<Question>?=null
     private var mSelectedOptionPosition:Int=0
@@ -30,6 +34,11 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_game_main)
+
+        //val RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
+        //final Button btn = (Button) findViewById(R.id.btn);
+
+
         mQuestionsList = Constants.getQuestions()
         mUserName = intent.getStringExtra(Constants.USER_NAME)
 
@@ -39,6 +48,8 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         optionOne.setOnClickListener(this)
         optionTwo.setOnClickListener(this)
         btnSubmit.setOnClickListener(this)
+
+
 
 
         //cia json retrofit galima perkelt i kita klase nzn kur reikia
@@ -124,9 +135,13 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
+
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
+        val tv = findViewById<View>(R.id.tv) as TextView
+        val pb_default = findViewById<View>(R.id.pb_default) as ProgressBar
+        val pb_drawable = findViewById<View>(R.id.pb_drawable) as ProgressBar
         when(v?.id) {
             R.id.optionOne -> {
                 selectedOptionView(optionOne,1)
@@ -161,6 +176,9 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                         btnSubmit.text= "FINISH"
                     } else {
                         btnSubmit.text= "Go to next question"
+
+                        progressStatus +=100/mQuestionsList!!.size-2;
+                        pb_drawable.setProgress(progressStatus);
 
                     }
                     mSelectedOptionPosition =0
