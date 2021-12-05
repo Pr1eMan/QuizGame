@@ -2,11 +2,9 @@ package com.ifk8edvmat1gabkojginkir.ktuprojektas
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.SystemClock
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -20,14 +18,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import com.ifk8edvmat1gabkojginkir.ktuprojektas.databinding.ActivityQuizMainActivtyBinding
 import com.ifk8edvmat1gabkojginkir.ktuprojektas.Constants
-import java.util.concurrent.TimeUnit
 
 class QuizMainActivty : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityQuizMainActivtyBinding
     private var const_user_name: String? = null
-    private var topic: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         const_user_name = intent.getStringExtra(Constants.const_name)
@@ -36,7 +32,7 @@ class QuizMainActivty : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarQuizMainActivty.toolbar)
 
-        val topic_edit_text : EditText = findViewById(R.id.topic_edit_text)
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_quiz_main_activty)
@@ -57,22 +53,12 @@ class QuizMainActivty : AppCompatActivity() {
         btnstart2.setOnClickListener {
             if(btnstart2.isPressed)
             {
-                val topic = topic_edit_text.text.toString().trim()
-                if (topic.isNullOrEmpty())
-                {
-                    topic_edit_text.error = "Required"
-                    Toast.makeText(applicationContext, "Enter topic you want to get a quiz on", Toast.LENGTH_SHORT).show()
-                }
-                else
-                {
-                    TimeUnit.SECONDS.sleep(1L)
-                    val intent = Intent(this,QuizGameMain::class.java)
-                    intent.putExtra(Constants.USER_NAME, const_user_name)
-                    intent.putExtra(Constants.TOPIC, topic)
-                    startActivity(intent)
-                    finish()
-                }
+                val intent = Intent(this,QuizGameMain::class.java)
+                intent.putExtra(Constants.USER_NAME, const_user_name)
+                startActivity(intent)
+                finish()
             }
+
         }
        // mySettings()
         }
