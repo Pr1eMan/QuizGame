@@ -6,78 +6,99 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="@drawable/bg_background"
     tools:context=".MainActivity">
-
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="9dp"
+        android:background="@color/purple_500"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp">
     <TextView
         android:id="@+id/tv_app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quiz app"
-        android:layout_marginBottom="30dp"
+        android:text="Wikipedia based Quiz app"
         android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
+        android:textColor="@color/white"
+        android:background="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
         />
+    </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@android:color/white"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="9dp"
         app:cardElevation="5dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@drawable/bg_background2"
             android:padding="16dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="welcome"
-                android:textColor="@android:color/black"
-                android:textSize="30sp"
-                android:textStyle="bold"/>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="please enter your name"
-                android:textColor="#7a8089"
-                android:textSize="16sp"
+
+                android:text="please enter your name to begin playing Wikipedia quiz"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 />
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:textColorHint="@color/white"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/etName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Name"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/purple_200"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/btnEnter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/purple_200"
-                android:text="Enter the game"
-                android:textSize="18sp"
-                android:textColor="@color/white">
-            </Button>
+
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="9dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginRight="72dp">
+    <Button
+    android:id="@+id/btnEnter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+    android:background="@drawable/bg_button"
+    android:text="Enter the game"
+    android:textSize="18sp"
+    android:textColor="@color/white">
+</Button>
+</androidx.cardview.widget.CardView>
+<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

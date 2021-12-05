@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/drawable/bg_background.xml" value="0.3385416666666667" />
+        <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/drawable/bg_background2.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/drawable/bg_button.xml" value="0.3385416666666667" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/drawable/progressbar_states.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_main.xml" value="0.20018115942028986" />
@@ -10,12 +13,16 @@
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_quiz_game_main.xml" value="0.45555555555555555" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_quiz_main.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_quiz_main_activty.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/activity_result.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/app_bar_quiz_main_activty.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/content_quiz_main_activty.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/fragment_home.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/fragment_rankings.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/fragment_rules.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/fragment_settings.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/list_item.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/nav_header_quiz_main_activty.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/layout/settings_activity.xml" value="0.1" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/menu/activity_main_drawer.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/menu/quiz_main_activty.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/kirde/Documents/GitHub/QuizGame/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.23229166666666667" />
