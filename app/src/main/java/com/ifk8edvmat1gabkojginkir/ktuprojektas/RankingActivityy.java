@@ -35,9 +35,6 @@ public class RankingActivityy extends AppCompatActivity {
         setContentView(R.layout.fragment_rankings);
         db= new DatabaseHelper(this);
         listItem=new ArrayList<>();
-        //listView=findViewById(R.id.listview);
-        
-        //viewData();
         db= new DatabaseHelper(this);
         listItem = new ArrayList<>();
         l1=(ListView)findViewById(R.id.listview);
