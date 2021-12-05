@@ -2,6 +2,7 @@ package com.ifk8edvmat1gabkojginkir.ktuprojektas
 
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Color.red
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -241,11 +242,11 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                 } else {
                     val question = mQuestionsList?.get(mCurrentPosition)
                     if(question!!.correctAnswer != mSelectedOptionPosition) {
-                        answerView(mSelectedOptionPosition,R.drawable.red)
+                        answerView(mSelectedOptionPosition,R.color.red)
                     } else {
                         mCorrectAnswers++
                     }
-                    answerView(question.correctAnswer, R.drawable.green)
+                    answerView(question.correctAnswer, R.color.green)
                     if(mCurrentPosition == mQuestionsList!!.size) {
                         btnSubmit.text= "FINISH"
                     } else {
@@ -269,7 +270,8 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
         when(answer) {
             1-> {
-                optionOne.background = ContextCompat.getDrawable(this,drawableView)
+              optionOne.background = ContextCompat.getDrawable(this,drawableView)
+
             }
             2-> {
                 optionTwo.background = ContextCompat.getDrawable(this,drawableView)
