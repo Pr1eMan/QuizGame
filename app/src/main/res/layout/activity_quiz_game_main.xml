@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".QuizGameMain"
-    android:background="#FFFFFF"
+    android:background="@drawable/bg_background"
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,6 +14,95 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="9dp"
+            android:background="@color/purple_500"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="64dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp">
+
+        <TextView
+            android:id="@+id/questionas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="23sp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/purple_200"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="9dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+           android:layout_marginBottom="2dp"
+            android:background="@color/purple_500">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_200"
+            android:gravity="center"
+            android:textSize="20sp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/optionOne"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="9dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/purple_500">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_200"
+            android:gravity="center"
+            android:textSize="20sp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/optionTwo"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="9dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/purple_500">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_200"
+            android:gravity="center"
+            android:textSize="20sp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/optionThree"
+            />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="9dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="25dp"
+            >
+        <Button
+            android:id="@+id/btnSubmit"
+            android:background="@color/purple_500"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="submit"/>
+        </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tv"
             android:layout_width="wrap_content"
@@ -21,15 +110,7 @@
             android:fontFamily="sans-serif-condensed"
             android:textColor="#676a6b"
             />
-        <ProgressBar
-            android:id="@+id/pb_default"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
-            android:layout_below="@id/tv"
-            android:layout_marginBottom="15dp"
-            android:background="#FFFFFF"
-            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,50 +122,28 @@
             android:paddingLeft="10dp"
             />
 
-
-        <TextView
-            android:id="@+id/questionas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="23sp"
-            android:paddingBottom="20dp"
-            android:textColor="@color/purple_200"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/purple_200"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:id="@+id/optionOne"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/purple_200"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:id="@+id/optionTwo"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/purple_200"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:id="@+id/optionThree"
-            />
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="submit"/>
         <ProgressBar
-            android:id="@+id/pb_drawable"
+            android:id="@+id/pb_default"
             style="@android:style/Widget.Holo.ProgressBar.Horizontal"
-            android:layout_width="225dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pb_default"
-            android:progressDrawable="@drawable/progressbar_states" />
+            android:layout_width="200dp"
+            android:layout_height="4dp"
 
+            android:layout_below="@id/tv"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_background"
+            android:visibility="invisible" />
+
+
+            <ProgressBar
+                android:id="@+id/pb_drawable"
+                style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_below="@id/pb_default"
+                android:progressDrawable="@drawable/progressbar_states" />
+      
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,6 +154,7 @@
             android:layout_alignBottom="@id/pb_drawable"
             android:paddingLeft="10dp"
             />
+
     </LinearLayout>
 
 
