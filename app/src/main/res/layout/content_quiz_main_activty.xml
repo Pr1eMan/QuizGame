@@ -7,13 +7,56 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_quiz_main_activty">
 
+ 
+    <LinearLayout
+        android:id="@+id/content_quiz_main_activity_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/nav_host_fragment_content_quiz_main_activty">
+
+        <TextView
+            android:id="@+id/content_quiz_main_activity_topic_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Choose a topic to be questioned on"
+            android:paddingTop="30dp"
+            android:paddingBottom="20dp"
+            android:textSize="20dp"
+            android:textColor="@color/purple_200"
+/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/topic_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="Topic"
+                android:textSize="20dp"
+                android:paddingBottom="30dp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+ 
     <fragment
         android:id="@+id/nav_host_fragment_content_quiz_main_activty"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         app:defaultNavHost="true"
+ 
         app:navGraph="@navigation/mobile_navigation"
         tools:layout_editor_absoluteY="75dp" />
+ 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
