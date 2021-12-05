@@ -52,7 +52,8 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         optionTwo.setOnClickListener(this)
         optionThree.setOnClickListener(this)
         btnSubmit.setOnClickListener(this)
-
+        val pb_drawable = findViewById<View>(R.id.pb_drawable) as ProgressBar
+        pb_drawable.setVisibility(View.GONE);
 
         //cia json retrofit galima perkelt i kita klase nzn kur reikia
         val request = RetrofitClientInstance.buildService(GetQuizApiEndpointInterface::class.java)
@@ -114,6 +115,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                         }
 
                         setQuestion()
+                        pb_drawable.setVisibility(View.VISIBLE);
                         val questiondto = allquiz[i].question ?: "N/A"
                         android.util.Log.v("question ", questiondto)
 
@@ -229,6 +231,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                         btnSubmit.text= "Go to next question"
 
                         progressStatus +=100/mQuestionsList!!.size;
+
                         pb_drawable.setProgress(progressStatus);
 
                     }
