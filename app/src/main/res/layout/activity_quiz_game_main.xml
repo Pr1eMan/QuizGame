@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".QuizGameMain"
+
     android:background="@drawable/bg_background"
-    >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,12 +27,56 @@
             android:layout_marginRight="24dp">
 
         <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#676a6b"
+            />
+        <ProgressBar
+            android:id="@+id/pb_default"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+            android:layout_below="@id/tv"
+            android:layout_marginBottom="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_toRightOf="@id/pb_default"
+            android:fontFamily="sans-serif-thin"
+            android:textSize="10dp"
+            android:layout_alignBottom="@id/pb_default"
+            android:paddingLeft="10dp"
+            />
+
+        <ProgressBar
+            android:id="@+id/pb_drawable"
+            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pb_default"
+            android:progressDrawable="@drawable/progressbar_states" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_toRightOf="@id/pb_drawable"
+            android:fontFamily="sans-serif-thin"
+            android:textSize="10dp"
+            android:layout_alignBottom="@id/pb_drawable"
+            android:paddingLeft="10dp"
+            />
+        <TextView
             android:id="@+id/questionas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="23sp"
-            android:paddingBottom="20dp"
+            android:textSize="30sp"
             android:textColor="@color/purple_200"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
@@ -47,9 +92,12 @@
             android:layout_height="wrap_content"
             android:textColor="@color/purple_200"
             android:gravity="center"
+
             android:textSize="20sp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:id="@+id/optionOne"/>
+
+            android:textSize="15sp"
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -64,6 +112,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/purple_200"
             android:gravity="center"
+
             android:textSize="20sp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/optionTwo"/>
@@ -96,12 +145,14 @@
             android:layout_marginBottom="5dp"
             android:layout_marginTop="25dp"
             >
+
         <Button
             android:id="@+id/btnSubmit"
             android:background="@color/purple_500"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="submit"/>
+
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tv"
@@ -154,6 +205,7 @@
             android:layout_alignBottom="@id/pb_drawable"
             android:paddingLeft="10dp"
             />
+
 
     </LinearLayout>
 

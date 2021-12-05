@@ -8,6 +8,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_quiz_main_activty">
 
+<<<<<<< HEAD
     <LinearLayout
         android:id="@+id/content_quiz_main_activity_linearLayout"
         android:layout_width="match_parent"
@@ -68,11 +69,14 @@
     </LinearLayout>
 
 
+=======
+>>>>>>> be394a95d31d616d2c0be82ab2a242daaeff0676
     <fragment
         android:id="@+id/nav_host_fragment_content_quiz_main_activty"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginTop="24dp"
         app:defaultNavHost="true"
         android:layout_marginLeft="56dp"
@@ -80,5 +84,10 @@
         app:layout_constraintTop_toBottomOf="@id/content_quiz_main_activity_linearLayout"
         app:navGraph="@navigation/mobile_navigation"
         tools:layout_editor_absoluteX="0dp" />
+=======
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/mobile_navigation"
+        tools:layout_editor_absoluteY="75dp" />
+>>>>>>> be394a95d31d616d2c0be82ab2a242daaeff0676
 
 </androidx.constraintlayout.widget.ConstraintLayout>
