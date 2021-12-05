@@ -26,13 +26,12 @@ import retrofit2.Response
 class QuizGameMain : AppCompatActivity(), View.OnClickListener {
     private var progressStatus = 0
     private val handler: Handler = Handler()
-    private var mCurrentPosition:Int =0
-    private val mQuestionsList:ArrayList<Question> =arrayListOf()
+    private var mCurrentPosition:Int =1
+    private var mQuestionsList:ArrayList<Question>?=null
     private var mSelectedOptionPosition:Int=0
     private var mCorrectAnswers: Int =0
     private var mUserName: String? =null
     private var mTopic: String? = ""
-    private var isSelected=false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_game_main)
@@ -41,20 +40,17 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         //final Button btn = (Button) findViewById(R.id.btn);
 
 
-       // mQuestionsList = Constants.getQuestions()
+        mQuestionsList = Constants.getQuestions()
         mUserName = intent.getStringExtra(Constants.USER_NAME)
         mTopic = intent.getStringExtra(Constants.TOPIC)
 
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
-        val optionThree = findViewById<View>(R.id.optionThree) as TextView
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
         optionOne.setOnClickListener(this)
         optionTwo.setOnClickListener(this)
-        optionThree.setOnClickListener(this)
         btnSubmit.setOnClickListener(this)
-        val pb_drawable = findViewById<View>(R.id.pb_drawable) as ProgressBar
-        pb_drawable.setVisibility(View.GONE);
+
 
         //cia json retrofit galima perkelt i kita klase nzn kur reikia
         val request = RetrofitClientInstance.buildService(GetQuizApiEndpointInterface::class.java)
@@ -79,44 +75,10 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                 if(allquiz != null){
 
                     for(i in 0 until allquiz.count()){
-                        val rnds = (1..3).random()
-
-                        if(rnds == 1) {
-                            val que1 = Question(
-                                i + 1,
-                                allquiz[i].question,
-                                allquiz[i].answers[0].toString(),
-                                allquiz[i].answers[1].toString(),
-                                allquiz[i].answers[2].toString(),
-                                1
-                            )
-                            mQuestionsList.add(que1)
-                        }
-                        if(rnds == 2) {
-                            val que1 = Question(
-                                i + 1,
-                                allquiz[i].question,
-                                allquiz[i].answers[1].toString(),
-                                allquiz[i].answers[0].toString(),
-                                allquiz[i].answers[2].toString(),
-                                2
-                            )
-                            mQuestionsList.add(que1)
-                        }
-                        if(rnds == 3) {
-                            val que1 = Question(
-                                i + 1,
-                                allquiz[i].question,
-                                allquiz[i].answers[1].toString(),
-                                allquiz[i].answers[2].toString(),
-                                allquiz[i].answers[0].toString(),
-                                3
-                            )
-                            mQuestionsList.add(que1)
-                        }
-
+                        val que1 = Question(i+1,allquiz[i].question,allquiz[i].answers[0].toString(),allquiz[i].answers[1].toString(),1
+                        )
+                            mQuestionsList!!.add(que1)
                         setQuestion()
-                        pb_drawable.setVisibility(View.VISIBLE);
                         val questiondto = allquiz[i].question ?: "N/A"
                         android.util.Log.v("question ", questiondto)
 
@@ -138,16 +100,15 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
 
     }
     private fun setQuestion() {
-        isSelected=false
+
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
-        val optionThree = findViewById<View>(R.id.optionThree) as TextView
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
-       // mCurrentPosition+=1
+       // mCurrentPosition=1
         //Thread.sleep(1_000)
         android.util.Log.v("question list size", mQuestionsList!!.size.toString())
 
-        val question: Question? = mQuestionsList!!.get(mCurrentPosition)
+        val question: Question? = mQuestionsList!!.get(mCurrentPosition+1)
 
         defaultOptionsView()
         if(mCurrentPosition == mQuestionsList!!.size) {
@@ -159,10 +120,8 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         questionas.text = question!!.question
 
        // val optionOne = findViewById<View>(R.id.optionOne) as TextView
-
         optionOne.text = question.optionOne
         optionTwo.text = question.optionTwo
-        optionThree.text = question.optionThree
        // val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
     }
 
@@ -170,13 +129,10 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
     private fun defaultOptionsView() {
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
-        val optionThree = findViewById<View>(R.id.optionThree) as TextView
-
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
         val options=ArrayList<TextView>()
         options.add(0,optionOne)
         options.add(1,optionTwo)
-        options.add(2,optionThree)
         for (option in options) {
             option.setTextColor(Color.parseColor("#7a8089"))
             option.typeface = Typeface.DEFAULT
@@ -188,46 +144,34 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
 
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
-        val optionThree = findViewById<View>(R.id.optionThree) as TextView
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
         val tv = findViewById<View>(R.id.tv) as TextView
         val pb_default = findViewById<View>(R.id.pb_default) as ProgressBar
         val pb_drawable = findViewById<View>(R.id.pb_drawable) as ProgressBar
-
-
         when(v?.id) {
             R.id.optionOne -> {
-                if(!isSelected)
                 selectedOptionView(optionOne,1)
-
             }
             R.id.optionTwo -> {
-                if(!isSelected)
                 selectedOptionView(optionTwo,2)
             }
-            R.id.optionThree -> {
-                if(!isSelected)
-                selectedOptionView(optionThree,3)
-            }
             R.id.btnSubmit -> {
-                isSelected=true
-
                 if(mSelectedOptionPosition ==0) {
                     mCurrentPosition++
                     when {
-                        mCurrentPosition <= mQuestionsList!!.size-1-> {
+                        mCurrentPosition <= mQuestionsList!!.size-2-> {
                             setQuestion()
                         } else -> {
                             val intent = Intent(this,ResultActivity::class.java)
                             intent.putExtra(Constants.USER_NAME, mUserName)
                             intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS,mQuestionsList!!.size)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS,mQuestionsList!!.size-2)
                             startActivity(intent)
                           //  Toast.makeText(this,"You have successfully completed the Quiz", Toast.LENGTH_SHORT).show()
                         }
                     }
                 } else {
-                    val question = mQuestionsList?.get(mCurrentPosition)
+                    val question = mQuestionsList?.get(mCurrentPosition-1)
                     if(question!!.correctAnswer != mSelectedOptionPosition) {
                         answerView(mSelectedOptionPosition,R.drawable.red)
                     } else {
@@ -239,8 +183,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
                     } else {
                         btnSubmit.text= "Go to next question"
 
-                        progressStatus +=100/mQuestionsList!!.size;
-
+                        progressStatus +=100/mQuestionsList!!.size-2;
                         pb_drawable.setProgress(progressStatus);
 
                     }
@@ -253,7 +196,6 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
     private fun answerView(answer:Int, drawableView:Int) {
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
-        val optionThree = findViewById<View>(R.id.optionThree) as TextView
         val btnSubmit = findViewById<View>(R.id.btnSubmit) as Button
         when(answer) {
             1-> {
@@ -261,9 +203,6 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
             }
             2-> {
                 optionTwo.background = ContextCompat.getDrawable(this,drawableView)
-            }
-            3-> {
-                optionThree.background = ContextCompat.getDrawable(this,drawableView)
             }
         }
     }

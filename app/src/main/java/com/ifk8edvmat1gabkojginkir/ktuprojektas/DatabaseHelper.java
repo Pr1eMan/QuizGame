@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<Player> getAllData(){
         ArrayList<Player> arrayList=new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM USERS order by SCORE desc",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM USERS",null);
 
         while (cursor.moveToNext()){
             Integer USERID = cursor.getInt(0);

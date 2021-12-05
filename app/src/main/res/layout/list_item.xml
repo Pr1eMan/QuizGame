@@ -19,12 +19,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textColor="#000000"
             android:id="@+id/UNAME"
             android:text="NAME"
-            android:textSize="20sp"
-            />
-
+            android:textSize="20sp"/>
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -33,8 +30,7 @@
             android:textColor="#F00"
             android:id="@+id/SCORE"
             android:text="SCORE"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
