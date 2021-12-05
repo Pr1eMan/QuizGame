@@ -143,7 +143,7 @@
                 android:layout_marginRight="32dp"
                 android:layout_below="@id/pb_default"
                 android:progressDrawable="@drawable/progressbar_states" />
-      
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
