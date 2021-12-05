@@ -32,6 +32,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
     private var mCorrectAnswers: Int =0
     private var mUserName: String? =null
     private var mTopic: String? = ""
+    private var isSelected=false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_game_main)
@@ -137,7 +138,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
 
     }
     private fun setQuestion() {
-
+        isSelected=false
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
         val optionThree = findViewById<View>(R.id.optionThree) as TextView
@@ -192,17 +193,25 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         val tv = findViewById<View>(R.id.tv) as TextView
         val pb_default = findViewById<View>(R.id.pb_default) as ProgressBar
         val pb_drawable = findViewById<View>(R.id.pb_drawable) as ProgressBar
+
+
         when(v?.id) {
             R.id.optionOne -> {
+                if(!isSelected)
                 selectedOptionView(optionOne,1)
+
             }
             R.id.optionTwo -> {
+                if(!isSelected)
                 selectedOptionView(optionTwo,2)
             }
             R.id.optionThree -> {
+                if(!isSelected)
                 selectedOptionView(optionThree,3)
             }
             R.id.btnSubmit -> {
+                isSelected=true
+
                 if(mSelectedOptionPosition ==0) {
                     mCurrentPosition++
                     when {
