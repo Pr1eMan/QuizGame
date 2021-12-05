@@ -17,5 +17,10 @@
             android:iconTint="@color/white"
             android:icon="@drawable/ic_menu_rankings"
             android:title="@string/menu_rankings" />
+        <item
+            android:id="@+id/nav_settings"
+            android:iconTint="@color/white"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/menu_settings" />
     </group>
 </menu>

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".QuizGameMain"
-    android:background="#FFFFFF"
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +27,6 @@
             style="@android:style/Widget.Holo.ProgressBar.Horizontal"
             android:layout_below="@id/tv"
             android:layout_marginBottom="15dp"
-            android:background="#FFFFFF"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -41,42 +39,6 @@
             android:paddingLeft="10dp"
             />
 
-
-        <TextView
-            android:id="@+id/questionas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="23sp"
-            android:paddingBottom="20dp"
-            android:textColor="@color/purple_200"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/purple_200"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:id="@+id/optionOne"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/purple_200"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:id="@+id/optionTwo"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/purple_200"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:id="@+id/optionThree"
-            />
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="submit"/>
         <ProgressBar
             android:id="@+id/pb_drawable"
             style="@android:style/Widget.Holo.ProgressBar.Horizontal"
@@ -95,6 +57,33 @@
             android:layout_alignBottom="@id/pb_drawable"
             android:paddingLeft="10dp"
             />
+        <TextView
+            android:id="@+id/questionas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="@color/purple_200"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_200"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:id="@+id/optionOne"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_200"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:id="@+id/optionTwo"/>
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="submit"/>
+
     </LinearLayout>
 
 

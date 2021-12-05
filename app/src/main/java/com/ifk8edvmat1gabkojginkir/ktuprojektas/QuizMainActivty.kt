@@ -2,7 +2,6 @@ package com.ifk8edvmat1gabkojginkir.ktuprojektas
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.SystemClock
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -20,7 +19,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import com.ifk8edvmat1gabkojginkir.ktuprojektas.databinding.ActivityQuizMainActivtyBinding
 import com.ifk8edvmat1gabkojginkir.ktuprojektas.Constants
-import java.util.concurrent.TimeUnit
 
 class QuizMainActivty : AppCompatActivity() {
 
@@ -65,7 +63,6 @@ class QuizMainActivty : AppCompatActivity() {
                 }
                 else
                 {
-                    TimeUnit.SECONDS.sleep(1L)
                     val intent = Intent(this,QuizGameMain::class.java)
                     intent.putExtra(Constants.USER_NAME, const_user_name)
                     intent.putExtra(Constants.TOPIC, topic)
