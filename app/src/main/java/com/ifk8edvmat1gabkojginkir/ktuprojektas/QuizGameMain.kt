@@ -44,7 +44,7 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
        // mQuestionsList = Constants.getQuestions()
         mUserName = intent.getStringExtra(Constants.USER_NAME)
         mTopic = intent.getStringExtra(Constants.TOPIC)
-
+        val questionas = findViewById<View>(R.id.questionas) as TextView
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
         val optionThree = findViewById<View>(R.id.optionThree) as TextView
@@ -55,6 +55,13 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         btnSubmit.setOnClickListener(this)
         val pb_drawable = findViewById<View>(R.id.pb_drawable) as ProgressBar
         pb_drawable.setVisibility(View.GONE);
+        questionas.text="Quiz is loading up"
+        optionOne.setVisibility(View.GONE);
+        optionTwo.setVisibility(View.GONE);
+        optionThree.setVisibility(View.GONE);
+        btnSubmit.setVisibility(View.GONE);
+
+
 
         //cia json retrofit galima perkelt i kita klase nzn kur reikia
         val request = RetrofitClientInstance.buildService(GetQuizApiEndpointInterface::class.java)
@@ -156,6 +163,11 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
             btnSubmit.text="SUBMIT"
         }
         val questionas = findViewById<View>(R.id.questionas) as TextView
+        questionas.setVisibility(View.VISIBLE);
+        optionOne.setVisibility(View.VISIBLE);
+        optionTwo.setVisibility(View.VISIBLE);
+        optionThree.setVisibility(View.VISIBLE);
+        btnSubmit.setVisibility(View.VISIBLE);
         questionas.text = question!!.question
 
        // val optionOne = findViewById<View>(R.id.optionOne) as TextView
