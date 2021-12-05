@@ -19,6 +19,27 @@
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <TextView
+        android:id="@+id/content_quiz_main_activity_topic_header2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose a topic to be questioned on"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btnStart">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/topic_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Topic" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/btnStart"
         android:layout_width="match_parent"
@@ -26,7 +47,7 @@
         android:background="@color/purple_200"
         android:textColor="@color/white"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="32dp"></Button>
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout"
+        tools:layout_editor_absoluteX="16dp"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
