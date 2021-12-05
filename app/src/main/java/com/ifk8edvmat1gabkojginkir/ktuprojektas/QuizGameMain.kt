@@ -31,7 +31,6 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
     private var mSelectedOptionPosition:Int=0
     private var mCorrectAnswers: Int =0
     private var mUserName: String? =null
-    private var mTopic: String? = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_game_main)
@@ -42,7 +41,6 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
 
         mQuestionsList = Constants.getQuestions()
         mUserName = intent.getStringExtra(Constants.USER_NAME)
-        mTopic = intent.getStringExtra(Constants.TOPIC)
 
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
@@ -52,26 +50,22 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         btnSubmit.setOnClickListener(this)
 
 
+
+
         //cia json retrofit galima perkelt i kita klase nzn kur reikia
-        val request = RetrofitClientInstance.buildService(GetQuizApiEndpointInterface::class.java)
-        val call = request?.getAllQuiz(mTopic.toString(), "json")
+
+        val service = RetrofitClientInstance.retrofitInstance?.create(GetQuizService::class.java)
+        val call = service?.getallquiz()
 
 
+
+        
         call?.enqueue(object : Callback<quizList> {
             override fun onResponse(call: Call<quizList>, response: Response<quizList>) {
                 val body = response?.body()
                 val allquiz = body?.quiz // cia yra visas quiz ArrayList (reikia ispausdint kad pasiziuret body: "quizlist(quiz=[quizDTO(question=....,correct_answer=.....,answers=......)...
                 val size = allquiz?.size
                 android.util.Log.v("json list size", size.toString())
-                if (size == 0)
-                {
-                    Toast.makeText(applicationContext, "Could not create questions on specified topic, try something else.", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(applicationContext,QuizMainActivty::class.java)
-
-                    intent.putExtra(Constants.const_name, mUserName.toString())
-                    startActivity(intent)
-                    finish()
-                }
                 if(allquiz != null){
 
                     for(i in 0 until allquiz.count()){
@@ -123,9 +117,9 @@ class QuizGameMain : AppCompatActivity(), View.OnClickListener {
         optionOne.text = question.optionOne
         optionTwo.text = question.optionTwo
        // val optionTwo = findViewById<View>(R.id.optionTwo) as TextView
+
+
     }
-
-
     private fun defaultOptionsView() {
         val optionOne = findViewById<View>(R.id.optionOne) as TextView
         val optionTwo = findViewById<View>(R.id.optionTwo) as TextView

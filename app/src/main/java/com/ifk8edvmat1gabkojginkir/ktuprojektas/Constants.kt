@@ -8,7 +8,6 @@ object Constants {
     const val const_name: String = "name" //is main activity paduotas vardas cia
 
     const val USER_NAME: String = "user_name"
-    const val TOPIC: String = "topic";
     const val TOTAL_QUESTIONS: String = "total questions"
     const val CORRECT_ANSWERS: String = "correct answers"
 
