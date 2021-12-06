@@ -92,7 +92,6 @@
         android:textSize="18sp"
         android:layout_marginLeft="64dp"
         android:layout_marginRight="64dp"
-        android:layout_marginTop="32dp"
         app:layout_constraintTop_toBottomOf="@id/content_quiz_main_activity_linearLayout"
         tools:layout_editor_absoluteX="16dp"></Button>
 
