@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ifk8edvmat1gabkojginkir.ktuprojektas.Adapters.MyAdapter;
@@ -24,10 +26,13 @@ public class RankingActivityy extends AppCompatActivity {
     MyAdapter myAdapter;
     DatabaseHelper db;
     ArrayList<String> listItem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_rankings);
+       //Button knopke = (Button) findViewById(R.id.btnBack);
+    //    TextView nothingToShow = (TextView) findViewById(R.id.nothingToShow);
         db= new DatabaseHelper(this);
         listItem=new ArrayList<>();
         db= new DatabaseHelper(this);

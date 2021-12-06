@@ -52,12 +52,21 @@
         android:layout_marginLeft="36dp"
         android:layout_marginRight="36dp">
 
-    <Button
-        android:id="@+id/btnDone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_button"
-        android:textColor="@color/white"
-        android:text="Back to main"/>
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:textColor="@color/white"
+            android:text="Back to main"/>
+
     </androidx.cardview.widget.CardView>
+    <Button
+        android:layout_marginTop="20dp"
+    android:id="@+id/btnShare"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_button"
+    android:textColor="@color/white"
+    android:text="Share your score"/>
 </LinearLayout>

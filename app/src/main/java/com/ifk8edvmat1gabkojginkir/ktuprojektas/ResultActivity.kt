@@ -35,6 +35,14 @@ class ResultActivity : AppCompatActivity() {
             startActivity(Intent(this,QuizMainActivty::class.java))
             finish()
         }
+        val share_text_1_btn = findViewById<View>(R.id.btnShare) as Button
+        share_text_1_btn.setOnClickListener {
+            val intent= Intent()
+            intent.action=Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT,"$mUserName achieved score: $correctAnswers out of $totalQuestions in wikipedia quiz game")
+            intent.type="text/plain"
+            startActivity(Intent.createChooser(intent,"Share To:"))
+        }
     }
 
 
